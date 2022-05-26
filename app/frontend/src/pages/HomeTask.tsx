@@ -10,8 +10,8 @@ export function Home() {
   const {setTodos, todos} = useContext(TodoContext)
   
 
-  const handleTaskDeletion = (todoId: number) => {
-    const newTodo = todos.filter((todoId) => (null &  todoId.id) !== todoId)
+  const handleTaskDeletion = (todoId: number | undefined): void => {
+    const newTodo = todos.filter((todo) => todo.id !== todoId);
 
     setTodos(newTodo)
   }
@@ -43,11 +43,11 @@ export function Home() {
             >Criar</ButtonAll>
         </div>
         {
-          todos.map((todo, key) => (<TaskBox 
+          todos.map((todo, key) => (<TaskBox
             key={`${key}_${todo.nome}`} 
             titulo={todo.title} nome={todo.nome}
             editClick={(titulo, nome) => console.log(titulo, nome) }
-            deleteClick={() => setTodos(handleTaskDeletion(todo.id)) }
+            deleteClick={() => handleTaskDeletion(todo.id) }
           />))
         }
       </main>

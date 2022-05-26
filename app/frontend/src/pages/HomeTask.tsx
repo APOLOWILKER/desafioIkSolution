@@ -10,12 +10,6 @@ export function Home() {
   const {setTodos, todos} = useContext(TodoContext)
   
 
-  const handleTaskDeletion = (todoId: number | undefined): void => {
-    const newTodo = todos.filter((todo) => todo.id !== todoId);
-
-    setTodos(newTodo)
-  }
-
   return (
     <>
       <header className='title'>
@@ -47,7 +41,7 @@ export function Home() {
             key={`${key}_${todo.nome}`} 
             titulo={todo.title} nome={todo.nome}
             editClick={(titulo, nome) => console.log(titulo, nome) }
-            deleteClick={() => handleTaskDeletion(todo.id) }
+            deleteClick={() => console.log() }
           />))
         }
       </main>

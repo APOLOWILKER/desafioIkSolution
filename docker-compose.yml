@@ -1,18 +1,16 @@
 services:
   frontend:
     build: ./app/frontend
-    container_name: frontend
     ports:
-      - 3000:3000
+      - "3000:3000"
+    container_name: frontend
     depends_on:
       - backend
-
-
   backend:
     build: ./app/backend
-    container_name: backend
     ports:
-      - 3001:3001
+      - "3001:3001"
+    container_name: backend
     depends_on:
       db:
         condition: service_healthy
@@ -24,8 +22,6 @@ services:
       - MYSQL_USER=root
       - MYSQL_PASSWORD=password
       - MYSQL_NAME=TodoDatabase
-
-
   db:
     image: mysql:8.0.21
     container_name: db

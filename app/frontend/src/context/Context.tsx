@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+// import {ITask} from '../services/api/tasks/TaskService'
 
 type ITodo = {
   id?: number,
@@ -21,8 +22,16 @@ type Props = {
   children: React.ReactNode;
 }
 
+
+
 export const TodoProvider: React.FC<Props> = ({ children }) => {
   const [ todos, setTodos] = useState<ITodo[]>([]);
+
+  // const handleTaskDeletion = (todoId: number | undefined): void => {
+  //   const newTodo = todos.filter((todo) => todo.id !== todoId);
+
+  //   setTodos(newTodo)
+  // }
 
   const value = {todos, setTodos};
 

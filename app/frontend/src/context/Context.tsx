@@ -1,10 +1,10 @@
 import { createContext, useState } from 'react'
 
 type ITodo = {
-  id: number,
+  id?: number,
   title: string,
-  name: string,
-  date: Date,
+  nome: string,
+  date?: string,
 }
 
 interface ITodoContext {

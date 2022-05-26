@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #09090A;
+  color:white;
+}
+
+.title {
+  background-color: rgba(76, 151, 0, 0.808);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.title > h1 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  display: block;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 2rem auto;
+  overflow: auto;
+  min-height: 32rem;
+  border: 0.2rem solid chartreuse;
+  border-radius: 0.2rem;
+}

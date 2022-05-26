@@ -1,0 +1,39 @@
+services:
+  frontend:
+    build: ./app/frontend
+    container_name: frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+
+
+  backend:
+    build: ./app/backend
+    container_name: backend
+    ports:
+      - 3001:3001
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - PORT=3001
+      # Os dados abaixo se referem ao container `db`
+      # Dica: Relembre aqui da comunicação interna entre containers
+      - MYSQL_HOST=localhost
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_NAME=TodoDatabase
+
+
+  db:
+    image: mysql:8.0.21
+    container_name: db
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 5

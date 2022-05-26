@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #09090A;
+  color:white;
+}
+
+.title {
+  background-color: rgba(76, 151, 0, 0.808);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.title > h1 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  display: block;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 2rem auto;
+  overflow: auto;
+  min-height: 32rem;
+  border: 0.2rem solid chartreuse;
+  border-radius: 0.5rem;
+}
+
+.containerInputs {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-content: flex-start;
+}
+
+.tituloInput {
+  margin:  0 0.5rem;
+  height: 1.8rem;
+  border-radius: 0.3rem;
+  width: 80%;
+  background-color: rgb(212, 205, 205);
+}
+
+.nomeInput {
+  margin: 0 0.5rem;
+  height: 1.8rem;
+  border-radius: 0.3rem;
+  width: 80%;
+  background-color: rgb(212, 205, 205);
+}
+
+.buttonCreate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: chartreuse;
+  height: 2rem;
+  padding: 0 0.8rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  color: #444;
+}
+
+.deleteBtn {
+  background-color: #444;
+  /* color: black; */
+  border: none;
+}
+
+
+.editBtn {
+  background-color: #444;
+  height: auto;
+  margin: 0 1rem;
+}
+
+.containerTask {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem auto;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  width: 90%;
+  background-color: #444;
+  height: auto;
+}
+
+.infosTask {
+  font-size: 1.5rem;
+}
+
+/* .containerBtn {
+  width: 1/3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+} */
